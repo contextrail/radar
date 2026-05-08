@@ -23,6 +23,10 @@ export default {
       "@semantic-release/github",
       {
         assets: [{ path: "release/*.tgz", label: "npm package tarball" }],
+        successComment: false,
+        failComment: false,
+        labels: false,
+        releasedLabels: false,
       },
     ],
     [
