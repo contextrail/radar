@@ -1,0 +1,26 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 10
+    groups:
+      docs-toolchain:
+        patterns:
+          - vite
+          - vitepress
+          - vitepress-plugin-mermaid
+          - mermaid
+          - esbuild
+      release-tooling:
+        patterns:
+          - semantic-release
+          - "@semantic-release/*"
+          - husky
+          - "@commitlint/*"
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

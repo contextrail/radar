@@ -1,0 +1,10 @@
+dist
+docs/.vitepress/dist
+docs/.vitepress/cache
+node_modules
+coverage
+release
+*.tgz
+pnpm-lock.yaml
+.env
+.env.*

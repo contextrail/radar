@@ -1,0 +1,15 @@
+node_modules/
+dist/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+*.log
+.env
+.env.local
+.env.radar
+.DS_Store
+coverage/
+release/
+.vscode/
+.idea/
+*.tsbuildinfo
+.husky/_/

@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "radar": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "--package", "@contextrail/radar@latest", "radar-mcp"],
+      "envFile": "$PWD/.env.radar"
+    }
+  }
+}

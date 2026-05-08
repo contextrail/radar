@@ -1,0 +1,27 @@
+---
+description: Route mechanical codebase work to Radar while keeping reasoning with the host agent
+alwaysApply: true
+---
+
+# Radar Delegation
+
+Radar is the project worker model. Use it to save host-agent context on mechanical I/O.
+
+Preflight: before broad reading, searching, summarizing, or drafting, check whether one Radar call can reduce the context you are about to spend.
+
+## Reach For Radar
+
+- `ask`: read 3+ files, one large file, or a stable file set to answer a focused question.
+- `search`: find relevant files before reading when the location is unknown.
+- `summarize`: extract signal from long logs, diffs, transcripts, test output, or chat exports.
+- `write`: draft boilerplate, tests, scaffolding, or docs from an existing pattern. Prefer `dryRun: true`.
+
+## Keep With The Host Agent
+
+- Debugging, architecture, safety-critical work, security judgment, race conditions, and numerical analysis.
+- Small tasks under roughly 2000 tokens.
+- Surgical edits that require exact line numbers.
+
+## Documentation
+
+For doc updates, summarize the source material first, ask Radar what the current docs need, then draft with `write` in dry-run mode. The host agent owns the final edit and verification.
