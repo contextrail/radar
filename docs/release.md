@@ -61,7 +61,7 @@ semantic-release then:
 
 Before the first release:
 
-- Create the GitHub repository at `contextrail/radar`, or update package metadata and `DOCS_BASE` if the final repository name differs.
+- Create the GitHub repository at `contextrail/radar`, or update package metadata and the Pages custom domain if the final repository name or docs domain differs.
 - Configure npm trusted publishing for the package and the GitHub Actions release workflow.
 - Create a `release` GitHub environment.
 - Add `RELEASE_APP_ID` as a variable on the `release` environment.
