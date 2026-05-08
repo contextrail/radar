@@ -57,6 +57,8 @@ semantic-release then:
 - Creates a GitHub Release with generated release notes.
 - Attaches the generated npm tarball.
 
+Radar disables semantic-release GitHub issue and PR comments. The release bot only needs to push release metadata, create tags, create GitHub Releases, and upload release assets.
+
 ## Required Repository Setup
 
 Before the first release:
@@ -81,8 +83,6 @@ Create a GitHub App for releases and install it only on `contextrail/radar`.
 The app needs repository permissions:
 
 - Repository contents: read and write.
-- Issues: read and write.
-- Pull requests: read and write.
 - Metadata: read.
 
 In GitHub:
@@ -92,8 +92,10 @@ In GitHub:
 3. Go to **Settings > Environments** and create `release`.
 4. Add `RELEASE_APP_ID` as an environment variable. Use the app's numeric **App ID**, not the client ID.
 5. Generate a private key for the app and add it as the `RELEASE_APP_PRIVATE_KEY` environment secret.
-6. Go to **Settings > Rules > Rulesets**.
-7. Add the release GitHub App to the bypass list for `main`, `next`, and `beta`.
-8. Require approval for the `release` environment if you want a human gate before publishing.
+6. If you changed the app permissions after installing it, approve or reinstall the app so the installation receives the updated permissions.
+7. Go to **Settings > Rules > Rulesets**.
+8. Add the release GitHub App to the bypass list for `main`, `next`, and `beta`.
+9. If branch protection uses a separate **Restrict who can push to matching branches** rule, add the release GitHub App there too.
+10. Require approval for the `release` environment if you want a human gate before publishing.
 
 In npm trusted publishing, set the environment to `release` because the workflow job uses the `release` environment.
