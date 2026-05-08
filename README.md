@@ -38,7 +38,7 @@ Radar runs as both:
 
 ## Documentation
 
-The full docs live in [`docs/`](./docs/index.md):
+The full docs are published at [radar.contextrail.app](https://radar.contextrail.app/). Source lives in [`docs/`](./docs/index.md):
 
 - [Getting Started](./docs/getting-started.md)
 - [Delegation Model](./docs/delegation-model.md)

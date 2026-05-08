@@ -19,7 +19,6 @@ The CI workflow runs on pull requests to `main`.
 
 It checks:
 
-- Pull request title format with commitlint.
 - TypeScript type checking.
 - ESLint.
 - Prettier formatting.
@@ -39,11 +38,3 @@ The workflow sets `id-token: write` for npm trusted publishing and provenance. C
 ## Documentation Deploy
 
 The docs workflow builds VitePress and deploys the generated site to GitHub Pages.
-
-The workflow sets:
-
-```bash
-DOCS_BASE=/radar/
-```
-
-Change that value if the final GitHub repository name is not `radar` or if the project uses a custom domain.
