@@ -1,0 +1,11 @@
+src/
+test/
+tsconfig.json
+*.tsbuildinfo
+.github/
+.vscode/
+.idea/
+node_modules/
+coverage/
+*.log
+.env*

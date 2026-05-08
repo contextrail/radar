@@ -1,0 +1,121 @@
+{
+  "name": "@contextrail/radar",
+  "version": "0.1.4",
+  "packageManager": "pnpm@10.33.0",
+  "description": "Your AI agent's company clerk. Hands off the legwork so the thinking stays sharp.",
+  "type": "module",
+  "bin": {
+    "radar": "./bin/radar.js",
+    "radar-mcp": "./bin/radar-mcp.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/core/service.d.ts",
+      "default": "./dist/core/service.js"
+    },
+    "./mcp": {
+      "types": "./dist/mcp/server.d.ts",
+      "default": "./dist/mcp/server.js"
+    },
+    "./cli": {
+      "types": "./dist/cli/index.d.ts",
+      "default": "./dist/cli/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "bin",
+    ".cursor/rules",
+    "docs/**/*.md",
+    "docs/public/images/context-rail-hero.png",
+    "docs/.vitepress/config.ts",
+    "AGENTS.md",
+    "CHANGELOG.md",
+    "README.md",
+    "SECURITY.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "mcp",
+    "claude-code",
+    "codex",
+    "cursor",
+    "llm",
+    "delegation",
+    "token-saving",
+    "ai-agent",
+    "coworker"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "dev": "tsc --watch",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "test": "node --test --import tsx test/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint --no-error-on-unmatched-pattern \"{src,test}/**/*.ts\" \"docs/.vitepress/**/*.ts\" \"bin/*.js\" \"*.config.js\"",
+    "lint:fix": "pnpm run lint -- --fix",
+    "format": "prettier --write \"{src,test,bin}/**/*.{ts,js}\" \"docs/**/*.{md,ts}\" \"*.{js,json,md}\"",
+    "format:check": "prettier --check \"{src,test,bin}/**/*.{ts,js}\" \"docs/**/*.{md,ts}\" \"*.{js,json,md}\"",
+    "check": "pnpm run typecheck && pnpm run lint && pnpm run format:check && pnpm run docs:build && pnpm test",
+    "commitlint": "commitlint --edit",
+    "security:audit": "pnpm audit --audit-level high",
+    "release": "semantic-release",
+    "release:dry-run": "semantic-release --dry-run --no-ci",
+    "prepare": "node .husky/install.mjs",
+    "prepublishOnly": "pnpm run clean && pnpm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "commander": "^14.0.0",
+    "openai": "^6.37.0"
+  },
+  "devDependencies": {
+    "@braintree/sanitize-url": "^7.1.2",
+    "@commitlint/cli": "^20.5.3",
+    "@commitlint/config-conventional": "^20.5.3",
+    "@eslint/js": "^10.0.1",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^12.0.6",
+    "@semantic-release/npm": "^13.1.5",
+    "@semantic-release/release-notes-generator": "^14.1.0",
+    "@types/node": "^24.12.2",
+    "cytoscape": "^3.33.3",
+    "cytoscape-cose-bilkent": "^4.1.0",
+    "dayjs": "^1.11.20",
+    "debug": "^4.4.3",
+    "eslint": "^10.3.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.6.0",
+    "husky": "^9.1.7",
+    "mermaid": "^11.14.0",
+    "prettier": "^3.8.3",
+    "semantic-release": "^25.0.3",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.59.2",
+    "vitepress": "^1.6.4",
+    "vitepress-plugin-mermaid": "^2.0.17"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "license": "MIT",
+  "author": "ContextRail",
+  "homepage": "https://contextrail.github.io/radar/",
+  "bugs": {
+    "url": "https://github.com/contextrail/radar/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/contextrail/radar.git"
+  }
+}

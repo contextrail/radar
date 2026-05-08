@@ -1,0 +1,4 @@
+[mcp_servers.radar]
+command = "sh"
+args = ["-lc", "set -a; . ./.env.radar; set +a; exec npx -y --package @contextrail/radar@latest radar-mcp"]
+cwd = "."
