@@ -1,6 +1,6 @@
 {
   "name": "@contextrail/radar",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "packageManager": "pnpm@10.33.0",
   "description": "Your AI agent's company clerk. Hands off the legwork so the thinking stays sharp.",
   "type": "module",
