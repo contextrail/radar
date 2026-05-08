@@ -2,6 +2,12 @@ name: CI
 
 on:
   pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+      - reopened
+      - ready_for_review
     branches:
       - main
 
@@ -32,6 +38,12 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Lint PR title
+        if: ${{ matrix.node-version == 20 }}
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: printf "%s\n" "$PR_TITLE" | pnpm exec commitlint --verbose
 
       - name: Run checks
         run: pnpm run check

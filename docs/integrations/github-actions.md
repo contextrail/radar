@@ -19,6 +19,7 @@ The CI workflow runs on pull requests to `main`.
 
 It checks:
 
+- Pull request title format with commitlint.
 - TypeScript type checking.
 - ESLint.
 - Prettier formatting.
